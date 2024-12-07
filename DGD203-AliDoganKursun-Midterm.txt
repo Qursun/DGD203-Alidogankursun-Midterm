@@ -1,0 +1,81 @@
+using System;
+
+class AdventureGame
+{
+    static void Main(string[] args)
+    {
+        // Oyun başlatılıyor
+        Console.WriteLine("Welcome to the Adventure Game!");
+        
+        // Oyuncunun ismini al
+        Console.Write("Please enter your name: ");
+        string playerName = Console.ReadLine();
+        Console.WriteLine($"Hello, {playerName}! Let's start your adventure.\n");
+
+        // Soru 1
+        Console.WriteLine("You stand at the edge of a dense, dark forest. The trees seem to whisper in the wind. What do you do?");
+        Console.WriteLine("1. Step forward into the forest cautiously.");
+        Console.WriteLine("2. Wait and observe for a while.");
+        Console.WriteLine("3. Turn around and head back home.");
+        string choice1 = Console.ReadLine();
+
+        // Soru 2 (Soru 1'e bağlı olarak)
+        if (choice1 == "1")
+        {
+            Console.WriteLine("\nYou step forward cautiously. The air is thick with mystery.");
+            Console.WriteLine("You come across a fork in the road.");
+        }
+        else
+        {
+            Console.WriteLine("\nYou decide to observe. A strange bird flies by and you notice a path emerging from the fog.");
+            Console.WriteLine("You see two paths ahead.");
+        }
+        
+        Console.WriteLine("1. Take the left path, which seems darker.");
+        Console.WriteLine("2. Take the right path, which is bathed in a strange light.");
+        string choice2 = Console.ReadLine();
+
+        // Soru 3 (Soru 2'ye bağlı olarak)
+        if (choice2 == "1")
+        {
+            Console.WriteLine("\nThe left path is eerie and dark. As you walk, you feel something watching you.");
+            Console.WriteLine("You find a small clearing with an ancient stone statue holding a golden chest.");
+        }
+        else
+        {
+            Console.WriteLine("\nThe right path is glowing, and you feel a strange pull towards the light.");
+            Console.WriteLine("You find yourself at the base of an ancient tree with a glowing key hanging from one of its branches.");
+        }
+        
+        Console.WriteLine("1. Take the chest/key and investigate.");
+        Console.WriteLine("2. Leave the chest/key and continue forward.");
+        string choice3 = Console.ReadLine();
+
+        // Soru 4 (Soru 3'e bağlı olarak)
+        if (choice3 == "1")
+        {
+            Console.WriteLine("\nYou decide to take the chest/key. As you open it, a magical force surrounds you!");
+            Console.WriteLine("You feel powerful and ready for whatever comes next.");
+        }
+        else
+        {
+            Console.WriteLine("\nYou leave the chest/key behind. The forest grows quieter, and you feel more at peace.");
+        }
+
+        // Final sonuçlar, oyuncunun verdiği yanıtlara bağlı olarak
+        if (choice1 == "1" && choice2 == "2" && choice3 == "1")
+        {
+            Console.WriteLine($"\n{playerName}, you are a brave and curious adventurer! Your careful choices have led you to great treasures and unknown powers.");
+        }
+        else if (choice1 == "2" && choice2 == "1" && choice3 == "2")
+        {
+            Console.WriteLine($"\n{playerName}, you are a thoughtful and cautious explorer. Your wisdom kept you safe and helped you discover the deeper secrets of the forest.");
+        }
+        else
+        {
+            Console.WriteLine($"\n{playerName}, you are a free spirit with an open heart. Sometimes taking risks pays off, and other times it leads to greater adventures!");
+        }
+
+        Console.WriteLine("\nThank you for playing the Adventure Game!");
+    }
+}
